@@ -151,18 +151,22 @@ namespace AD310AD
             string str = Convert.ToString(obj); // 문자열 변환            
 
             // 헤더 구분 및 해당 데이터 취합
-            if (((string.Compare(str, 0, "?", 0, 1) == 0) || (string.Compare(str, 0, "I", 0, 1) == 0) || (string.Compare(str, 0, "CF", 0, 2) == 0) || (string.Compare(str, 0, "CS", 0, 2) == 0)) && rs.CF)
+            
+            // CF모드 && (커맨드 미지정(?) || 커맨드 미실행(I) || CF || CS)
+            if ( rs.CF && ((string.Compare(str, 0, "?", 0, 1) == 0) || (string.Compare(str, 0, "I", 0, 1) == 0) || (string.Compare(str, 0, "CF", 0, 2) == 0) || (string.Compare(str, 0, "CS", 0, 2) == 0)) )
             {
                 rs.CF = false;
                 cfDataArray[rs.arrayIndexCF] = str;                
                 //str = string.Empty;
             }
-            else if (((string.Compare(str, 0, "?", 0, 1) == 0) || (string.Compare(str, 0, "I", 0, 1) == 0) || (string.Compare(str, 0, "F", 0, 1) == 0) || (string.Compare(str, 0, "VER", 0, 3) == 0) || (string.Compare(str, 0, "STOOK", 0, 5) == 0) || (string.Compare(str, 0, "SETOK", 0, 5) == 0)) && rs.F)
+            // F모드 && (커맨드 미지정(?) || 커맨드 미실행(I) || F || VER || STOOK || SETOK)
+            else if (rs.F && ((string.Compare(str, 0, "?", 0, 1) == 0) || (string.Compare(str, 0, "I", 0, 1) == 0) || (string.Compare(str, 0, "F", 0, 1) == 0) || (string.Compare(str, 0, "VER", 0, 3) == 0) || (string.Compare(str, 0, "STOOK", 0, 5) == 0) || (string.Compare(str, 0, "SETOK", 0, 5) == 0)) )
             {
                 rs.F = false;
                 fDataArray[rs.arrayIndexF] = str;
                 //str = string.Empty;
             }
+            // 
             else
             {
                 if (string.Compare(str, 0, "ST", 0, 2) == 0)
@@ -1123,18 +1127,30 @@ namespace AD310AD
                                 // parity 표시
                                 try
                                 {
-                                    if (Convert.ToInt32(fDataArray[9].Substring(5)) == 0)
+                                    // #TODOLIST
+                                    // for문으로 수정
+                                    //if (Convert.ToInt32(fDataArray[9].Substring(5)) == 0)
+                                    //{
+                                    //    cmdParity.Text = cmdParity.Items[0].ToString();
+                                    //}
+                                    //else if (Convert.ToInt32(fDataArray[9].Substring(5)) == 1)
+                                    //{
+                                    //    cmdParity.Text = cmdParity.Items[1].ToString();
+                                    //}
+                                    //else if (Convert.ToInt32(fDataArray[9].Substring(5)) == 2)
+                                    //{
+                                    //    cmdParity.Text = cmdParity.Items[2].ToString();
+                                    //}
+
+                                    int parityInt = Convert.ToInt32(fDataArray[9].Substring(5));
+                                    for(int i = 0; i < 3; i++)
                                     {
-                                        cmdParity.Text = cmdParity.Items[0].ToString();
+                                        if(parityInt == i)
+                                        {
+                                            cmdParity.Text = cmdParity.Items[i].ToString();
+                                        }
                                     }
-                                    else if (Convert.ToInt32(fDataArray[9].Substring(5)) == 1)
-                                    {
-                                        cmdParity.Text = cmdParity.Items[1].ToString();
-                                    }
-                                    else if (Convert.ToInt32(fDataArray[9].Substring(5)) == 2)
-                                    {
-                                        cmdParity.Text = cmdParity.Items[2].ToString();
-                                    }
+
                                     fDataArray[9] = string.Empty;
                                 }
                                 catch
@@ -1293,53 +1309,64 @@ namespace AD310AD
                             }
                             else
                             {
-                                if (cmbCutoff.Text == cmbCutoff.Items[0].ToString())
+                                // #TODOLIST
+                                // for문으로 수정
+                                //if (cmbCutoff.Text == cmbCutoff.Items[0].ToString())
+                                //{
+                                //    temp = "0";
+                                //}
+                                //else if (cmbCutoff.Text == cmbCutoff.Items[1].ToString())
+                                //{
+                                //    temp = "1";
+                                //}
+                                //else if (cmbCutoff.Text == cmbCutoff.Items[2].ToString())
+                                //{
+                                //    temp = "2";
+                                //}
+                                //else if (cmbCutoff.Text == cmbCutoff.Items[3].ToString())
+                                //{
+                                //    temp = "3";
+                                //}
+                                //else if (cmbCutoff.Text == cmbCutoff.Items[4].ToString())
+                                //{
+                                //    temp = "4";
+                                //}
+                                //else if (cmbCutoff.Text == cmbCutoff.Items[5].ToString())
+                                //{
+                                //    temp = "5";
+                                //}
+                                //else if (cmbCutoff.Text == cmbCutoff.Items[6].ToString())
+                                //{
+                                //    temp = "6";
+                                //}
+                                //else if (cmbCutoff.Text == cmbCutoff.Items[7].ToString())
+                                //{
+                                //    temp = "7";
+                                //}
+                                //else if (cmbCutoff.Text == cmbCutoff.Items[8].ToString())
+                                //{
+                                //    temp = "8";
+                                //}
+                                //else if (cmbCutoff.Text == cmbCutoff.Items[9].ToString())
+                                //{
+                                //    temp = "9";
+                                //}
+                                //else if (cmbCutoff.Text == cmbCutoff.Items[10].ToString())
+                                //{
+                                //    temp = "10";
+                                //}
+                                //else if (cmbCutoff.Text == cmbCutoff.Items[11].ToString())
+                                //{
+                                //    temp = "11";
+                                //}
+
+                                int parityInt = Convert.ToInt32(fDataArray[9].Substring(5));
+                                for (int i = 0; i < 12; i++)
                                 {
-                                    temp = "0";
-                                }
-                                else if (cmbCutoff.Text == cmbCutoff.Items[1].ToString())
-                                {
-                                    temp = "1";
-                                }
-                                else if (cmbCutoff.Text == cmbCutoff.Items[2].ToString())
-                                {
-                                    temp = "2";
-                                }
-                                else if (cmbCutoff.Text == cmbCutoff.Items[3].ToString())
-                                {
-                                    temp = "3";
-                                }
-                                else if (cmbCutoff.Text == cmbCutoff.Items[4].ToString())
-                                {
-                                    temp = "4";
-                                }
-                                else if (cmbCutoff.Text == cmbCutoff.Items[5].ToString())
-                                {
-                                    temp = "5";
-                                }
-                                else if (cmbCutoff.Text == cmbCutoff.Items[6].ToString())
-                                {
-                                    temp = "6";
-                                }
-                                else if (cmbCutoff.Text == cmbCutoff.Items[7].ToString())
-                                {
-                                    temp = "7";
-                                }
-                                else if (cmbCutoff.Text == cmbCutoff.Items[8].ToString())
-                                {
-                                    temp = "8";
-                                }
-                                else if (cmbCutoff.Text == cmbCutoff.Items[9].ToString())
-                                {
-                                    temp = "9";
-                                }
-                                else if (cmbCutoff.Text == cmbCutoff.Items[10].ToString())
-                                {
-                                    temp = "10";
-                                }
-                                else if (cmbCutoff.Text == cmbCutoff.Items[11].ToString())
-                                {
-                                    temp = "11";
+                                    if (cmbCutoff.Text == cmbCutoff.Items[i].ToString())
+                                    {
+                                        temp = i.ToString();
+                                    }
                                 }
 
                                 serialPort1.Write("F001," + temp + rs.Terminator);
@@ -1352,53 +1379,64 @@ namespace AD310AD
                             // 디지털 필터 표시
                             try
                             {
-                                if (Convert.ToInt32(fDataArray[0].Substring(5)) == 0)
+                                // #TODOLIST
+                                // for문으로 수정
+                                //if (Convert.ToInt32(fDataArray[0].Substring(5)) == 0)
+                                //{
+                                //    cmbCutoff.Text = cmbCutoff.Items[0].ToString();
+                                //}
+                                //else if (Convert.ToInt32(fDataArray[0].Substring(5)) == 1)
+                                //{
+                                //    cmbCutoff.Text = cmbCutoff.Items[1].ToString();
+                                //}
+                                //else if (Convert.ToInt32(fDataArray[0].Substring(5)) == 2)
+                                //{
+                                //    cmbCutoff.Text = cmbCutoff.Items[2].ToString();
+                                //}
+                                //else if (Convert.ToInt32(fDataArray[0].Substring(5)) == 3)
+                                //{
+                                //    cmbCutoff.Text = cmbCutoff.Items[3].ToString();
+                                //}
+                                //else if (Convert.ToInt32(fDataArray[0].Substring(5)) == 4)
+                                //{
+                                //    cmbCutoff.Text = cmbCutoff.Items[4].ToString();
+                                //}
+                                //else if (Convert.ToInt32(fDataArray[0].Substring(5)) == 5)
+                                //{
+                                //    cmbCutoff.Text = cmbCutoff.Items[5].ToString();
+                                //}
+                                //else if (Convert.ToInt32(fDataArray[0].Substring(5)) == 6)
+                                //{
+                                //    cmbCutoff.Text = cmbCutoff.Items[6].ToString();
+                                //}
+                                //else if (Convert.ToInt32(fDataArray[0].Substring(5)) == 7)
+                                //{
+                                //    cmbCutoff.Text = cmbCutoff.Items[7].ToString();
+                                //}
+                                //else if (Convert.ToInt32(fDataArray[0].Substring(5)) == 8)
+                                //{
+                                //    cmbCutoff.Text = cmbCutoff.Items[8].ToString();
+                                //}
+                                //else if (Convert.ToInt32(fDataArray[0].Substring(5)) == 9)
+                                //{
+                                //    cmbCutoff.Text = cmbCutoff.Items[9].ToString();
+                                //}
+                                //else if (Convert.ToInt32(fDataArray[0].Substring(5)) == 10)
+                                //{
+                                //    cmbCutoff.Text = cmbCutoff.Items[10].ToString();
+                                //}
+                                //else if (Convert.ToInt32(fDataArray[0].Substring(5)) == 11)
+                                //{
+                                //    cmbCutoff.Text = cmbCutoff.Items[11].ToString();
+                                //}
+
+                                int cutoffInt = Convert.ToInt32(fDataArray[0].Substring(5));
+                                for (int i = 0; i < 12; i++)
                                 {
-                                    cmbCutoff.Text = cmbCutoff.Items[0].ToString();
-                                }
-                                else if (Convert.ToInt32(fDataArray[0].Substring(5)) == 1)
-                                {
-                                    cmbCutoff.Text = cmbCutoff.Items[1].ToString();
-                                }
-                                else if (Convert.ToInt32(fDataArray[0].Substring(5)) == 2)
-                                {
-                                    cmbCutoff.Text = cmbCutoff.Items[2].ToString();
-                                }
-                                else if (Convert.ToInt32(fDataArray[0].Substring(5)) == 3)
-                                {
-                                    cmbCutoff.Text = cmbCutoff.Items[3].ToString();
-                                }
-                                else if (Convert.ToInt32(fDataArray[0].Substring(5)) == 4)
-                                {
-                                    cmbCutoff.Text = cmbCutoff.Items[4].ToString();
-                                }
-                                else if (Convert.ToInt32(fDataArray[0].Substring(5)) == 5)
-                                {
-                                    cmbCutoff.Text = cmbCutoff.Items[5].ToString();
-                                }
-                                else if (Convert.ToInt32(fDataArray[0].Substring(5)) == 6)
-                                {
-                                    cmbCutoff.Text = cmbCutoff.Items[6].ToString();
-                                }
-                                else if (Convert.ToInt32(fDataArray[0].Substring(5)) == 7)
-                                {
-                                    cmbCutoff.Text = cmbCutoff.Items[7].ToString();
-                                }
-                                else if (Convert.ToInt32(fDataArray[0].Substring(5)) == 8)
-                                {
-                                    cmbCutoff.Text = cmbCutoff.Items[8].ToString();
-                                }
-                                else if (Convert.ToInt32(fDataArray[0].Substring(5)) == 9)
-                                {
-                                    cmbCutoff.Text = cmbCutoff.Items[9].ToString();
-                                }
-                                else if (Convert.ToInt32(fDataArray[0].Substring(5)) == 10)
-                                {
-                                    cmbCutoff.Text = cmbCutoff.Items[10].ToString();
-                                }
-                                else if (Convert.ToInt32(fDataArray[0].Substring(5)) == 11)
-                                {
-                                    cmbCutoff.Text = cmbCutoff.Items[11].ToString();
+                                    if (cutoffInt == i)
+                                    {
+                                        cmbCutoff.Text = cmbCutoff.Items[i].ToString();
+                                    }
                                 }
                                 fDataArray[0] = string.Empty;
                             }
@@ -1423,26 +1461,37 @@ namespace AD310AD
                             }
                             else
                             {
-                                if (cmbHoldmode.Text == cmbHoldmode.Items[0].ToString())
+                                // #TODOLIST
+                                // for문으로 수정
+                                //if (cmbHoldmode.Text == cmbHoldmode.Items[0].ToString())
+                                //{
+                                //    temp = "0";
+                                //}
+                                //else if (cmbHoldmode.Text == cmbHoldmode.Items[1].ToString())
+                                //{
+                                //    temp = "1";
+                                //}
+                                //else if (cmbHoldmode.Text == cmbHoldmode.Items[2].ToString())
+                                //{
+                                //    temp = "2";
+                                //}
+                                //else if (cmbHoldmode.Text == cmbHoldmode.Items[3].ToString())
+                                //{
+                                //    temp = "3";
+                                //}
+                                //else if (cmbHoldmode.Text == cmbHoldmode.Items[4].ToString())
+                                //{
+                                //    temp = "4";
+                                //}
+
+                                for (int i = 0; i < 5; i++)
                                 {
-                                    temp = "0";
+                                    if (cmbHoldmode.Text == cmbHoldmode.Items[i].ToString())
+                                    {
+                                        temp = i.ToString();
+                                    }
                                 }
-                                else if (cmbHoldmode.Text == cmbHoldmode.Items[1].ToString())
-                                {
-                                    temp = "1";
-                                }
-                                else if (cmbHoldmode.Text == cmbHoldmode.Items[2].ToString())
-                                {
-                                    temp = "2";
-                                }
-                                else if (cmbHoldmode.Text == cmbHoldmode.Items[3].ToString())
-                                {
-                                    temp = "3";
-                                }
-                                else if (cmbHoldmode.Text == cmbHoldmode.Items[4].ToString())
-                                {
-                                    temp = "4";
-                                }
+
                                 serialPort1.Write("F002," + temp + rs.Terminator);
                             }
                             rs.arrayIndexF = 1;
@@ -1454,25 +1503,36 @@ namespace AD310AD
                             try
                             {
                                 // 홀드 모드 표시
-                                if (Convert.ToInt32(fDataArray[1].Substring(5)) == 0)
+                                // #TODOLIST
+                                // for문으로 수정
+                                //if (Convert.ToInt32(fDataArray[1].Substring(5)) == 0)
+                                //{
+                                //    cmbHoldmode.Text = cmbHoldmode.Items[0].ToString();
+                                //}
+                                //else if (Convert.ToInt32(fDataArray[1].Substring(5)) == 1)
+                                //{
+                                //    cmbHoldmode.Text = cmbHoldmode.Items[1].ToString();
+                                //}
+                                //else if (Convert.ToInt32(fDataArray[1].Substring(5)) == 2)
+                                //{
+                                //    cmbHoldmode.Text = cmbHoldmode.Items[2].ToString();
+                                //}
+                                //else if (Convert.ToInt32(fDataArray[1].Substring(5)) == 3)
+                                //{
+                                //    cmbHoldmode.Text = cmbHoldmode.Items[3].ToString();
+                                //}
+                                //else if (Convert.ToInt32(fDataArray[1].Substring(5)) == 4)
+                                //{
+                                //    cmbHoldmode.Text = cmbHoldmode.Items[4].ToString();
+                                //}
+
+                                int holdInt = Convert.ToInt32(fDataArray[1].Substring(5));
+                                for (int i = 0; i < 5; i++)
                                 {
-                                    cmbHoldmode.Text = cmbHoldmode.Items[0].ToString();
-                                }
-                                else if (Convert.ToInt32(fDataArray[1].Substring(5)) == 1)
-                                {
-                                    cmbHoldmode.Text = cmbHoldmode.Items[1].ToString();
-                                }
-                                else if (Convert.ToInt32(fDataArray[1].Substring(5)) == 2)
-                                {
-                                    cmbHoldmode.Text = cmbHoldmode.Items[2].ToString();
-                                }
-                                else if (Convert.ToInt32(fDataArray[1].Substring(5)) == 3)
-                                {
-                                    cmbHoldmode.Text = cmbHoldmode.Items[3].ToString();
-                                }
-                                else if (Convert.ToInt32(fDataArray[1].Substring(5)) == 4)
-                                {
-                                    cmbHoldmode.Text = cmbHoldmode.Items[4].ToString();
+                                    if (holdInt == i)
+                                    {
+                                        cmbHoldmode.Text = cmbHoldmode.Items[i].ToString();
+                                    }
                                 }
                                 fDataArray[1] = string.Empty;
                             }
@@ -1777,17 +1837,26 @@ namespace AD310AD
                             }
                             else
                             {
-                                if (cmdCmpMode.Text == cmdCmpMode.Items[0].ToString())
+                                // #TODOLIST
+                                // for문으로 수정
+                                //if (cmdCmpMode.Text == cmdCmpMode.Items[0].ToString())
+                                //{
+                                //    temp = "0";
+                                //}
+                                //else if (cmdCmpMode.Text == cmdCmpMode.Items[1].ToString())
+                                //{
+                                //    temp = "1";
+                                //}
+                                //else if (cmdCmpMode.Text == cmdCmpMode.Items[2].ToString())
+                                //{
+                                //    temp = "2";
+                                //}
+                                for (int i = 0; i < 3; i++)
                                 {
-                                    temp = "0";
-                                }
-                                else if (cmdCmpMode.Text == cmdCmpMode.Items[1].ToString())
-                                {
-                                    temp = "1";
-                                }
-                                else if (cmdCmpMode.Text == cmdCmpMode.Items[2].ToString())
-                                {
-                                    temp = "2";
+                                    if (cmdCmpMode.Text == cmdCmpMode.Items[i].ToString())
+                                    {
+                                        temp = i.ToString();
+                                    }
                                 }
                                 serialPort1.Write("F103," + temp + rs.Terminator);
                             }
@@ -1798,17 +1867,27 @@ namespace AD310AD
                             // 모드 표시
                             try
                             {
-                                if (Convert.ToInt32(fDataArray[5].Substring(5)) == 0)
+                                // #TODOLIST
+                                // for문으로 수정
+                                //if (Convert.ToInt32(fDataArray[5].Substring(5)) == 0)
+                                //{
+                                //    cmdCmpMode.Text = cmdCmpMode.Items[0].ToString();
+                                //}
+                                //else if (Convert.ToInt32(fDataArray[5].Substring(5)) == 1)
+                                //{
+                                //    cmdCmpMode.Text = cmdCmpMode.Items[1].ToString();
+                                //}
+                                //else if (Convert.ToInt32(fDataArray[5].Substring(5)) == 2)
+                                //{
+                                //    cmdCmpMode.Text = cmdCmpMode.Items[2].ToString();
+                                //}
+                                int cmdInt = Convert.ToInt32(fDataArray[5].Substring(5));
+                                for (int i = 0; i < 3; i++)
                                 {
-                                    cmdCmpMode.Text = cmdCmpMode.Items[0].ToString();
-                                }
-                                else if (Convert.ToInt32(fDataArray[5].Substring(5)) == 1)
-                                {
-                                    cmdCmpMode.Text = cmdCmpMode.Items[1].ToString();
-                                }
-                                else if (Convert.ToInt32(fDataArray[5].Substring(5)) == 2)
-                                {
-                                    cmdCmpMode.Text = cmdCmpMode.Items[2].ToString();
+                                    if (cmdInt == i)
+                                    {
+                                        cmdCmpMode.Text = cmdCmpMode.Items[i].ToString();
+                                    }
                                 }
                                 fDataArray[5] = string.Empty;
                             }
@@ -1915,6 +1994,8 @@ namespace AD310AD
                             else
                             {
                                 // DIV 명령
+                                // #TODOLIST
+                                // for문으로 수정
                                 if (calDigit.Text == calDigit.Items[0].ToString())
                                 {
                                     temp = "1";
@@ -1948,6 +2029,8 @@ namespace AD310AD
                             // DIV 표시
                             try
                             {
+                                // #TODOLIST
+                                // for문으로 수정
                                 if (Convert.ToInt32(cfDataArray[1].Substring(5)) == 1)
                                 {
                                     calDigit.Text = calDigit.Items[0].ToString();
@@ -1996,6 +2079,8 @@ namespace AD310AD
                             else
                             {
                                 // 소수점 명령
+                                // #TODOLIST
+                                // for문으로 수정
                                 if (calPoint.Text == calPoint.Items[0].ToString())
                                 {
                                     temp = "0";
@@ -2021,6 +2106,8 @@ namespace AD310AD
                             // 소수점 표시
                             try
                             {
+                                // #TODOLIST
+                                // for문으로 수정
                                 if (Convert.ToInt32(cfDataArray[0].Substring(5)) == 0)
                                 {
                                     calPoint.Text = calPoint.Items[0].ToString();
@@ -2060,6 +2147,8 @@ namespace AD310AD
                             }
                             else
                             {
+                                // #TODOLIST
+                                // for문으로 수정
                                 if (cmdUnit.Text == cmdUnit.Items[0].ToString())
                                 {
                                     temp = "0";
@@ -2085,6 +2174,8 @@ namespace AD310AD
                             // 단위 설정 표시
                             try
                             {
+                                // #TODOLIST
+                                // for문으로 수정
                                 if (Convert.ToInt32(cfDataArray[8].Substring(5)) == 0)
                                 {
                                     cmdUnit.Text = cmdUnit.Items[0].ToString();
@@ -2323,7 +2414,9 @@ namespace AD310AD
                 standbySec = 0;
                 funcMode = false;
                 dispMsg = string.Empty;
-                textBox1.TextAlign = HorizontalAlignment.Right;                
+                textBox1.TextAlign = HorizontalAlignment.Right;
+                //#TODOLIST
+                // 왜 같은 코드가 두번반복?
                 serialPort1.Write("F206,1" + rs.Terminator);
                 Thread.Sleep(300);
                 serialPort1.Write("F206,1" + rs.Terminator);
@@ -2359,6 +2452,8 @@ namespace AD310AD
             {
                 funcMode = true;
                 rs.Block = false;
+                //#TODOLIST
+                // 왜 같은 코드가 두번반복?
                 serialPort1.Write("F206,2" + rs.Terminator);
                 serialPort1.DiscardInBuffer();
                 Thread.Sleep(300);
