@@ -52,3 +52,4 @@ G:\내 드라이브\업무\WorkSpace\AD310PC_P\AD310PC\obj\Debug\AD310PC.applica
 G:\내 드라이브\업무\WorkSpace\AD310PC_P\AD310PC\obj\Debug\AD310PC.exe
 G:\내 드라이브\업무\WorkSpace\AD310PC_P\AD310PC\obj\Debug\AD310PC.pdb
 G:\내 드라이브\업무\WorkSpace\AD310PC_P\AD310PC\obj\Debug\AD310PC.csprojAssemblyReference.cache
+G:\내 드라이브\업무\WorkSpace\AD310PC_P\AD310PC\bin\Debug\SEA_____.TTF

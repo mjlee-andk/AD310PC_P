@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AD310PC.exe" size="335248">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AD310PC.exe" size="332176">
       <assemblyIdentity name="AD310PC" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>NUradRBVHNlcusMTt//A8apqLVk=</dsig:DigestValue>
+        <dsig:DigestValue>lYh0+P4JfwtSyFW+yJHGiW2bCkA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

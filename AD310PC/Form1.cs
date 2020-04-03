@@ -12,6 +12,7 @@ using System.Threading;
 using myResource = AD310AD.Properties.Resources;
 using mySetting = AD310AD.Properties.Settings;
 using System.Globalization;
+using System.Drawing.Text;
 
 namespace AD310AD
 {
@@ -94,6 +95,12 @@ namespace AD310AD
             cmbStopbits.Text = mySetting.Default.StopDefault;
             cmbTerminator.Text = mySetting.Default.TerminatorDefault;
 
+            // 폰트 설정
+            PrivateFontCollection privateFonts = new PrivateFontCollection();
+            privateFonts.AddFontFile("SEA_____.TTF");
+
+            Font font = new Font(privateFonts.Families[0], 24f);
+            textBox1.Font = font;
         }
 
         // 시리얼 수신 이벤트
