@@ -456,7 +456,7 @@
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(5, 5);
+            this.panel1.Location = new System.Drawing.Point(6, 6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(731, 323);
             this.panel1.TabIndex = 25;
@@ -618,7 +618,7 @@
             this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.CausesValidation = false;
             this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox1.Font = new System.Drawing.Font("SegmentA1", 90F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 90F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.textBox1.HideSelection = false;
             this.textBox1.Location = new System.Drawing.Point(90, 102);
@@ -1027,7 +1027,7 @@
             this.tabVer.Controls.Add(this.groupBoxVer);
             this.tabVer.Location = new System.Drawing.Point(4, 22);
             this.tabVer.Name = "tabVer";
-            this.tabVer.Size = new System.Drawing.Size(733, 266);
+            this.tabVer.Size = new System.Drawing.Size(723, 297);
             this.tabVer.TabIndex = 11;
             this.tabVer.Text = "정보";
             this.tabVer.UseVisualStyleBackColor = true;
@@ -1045,7 +1045,7 @@
             this.groupBoxVer.Controls.Add(this.label15);
             this.groupBoxVer.Location = new System.Drawing.Point(11, 11);
             this.groupBoxVer.Name = "groupBoxVer";
-            this.groupBoxVer.Size = new System.Drawing.Size(710, 240);
+            this.groupBoxVer.Size = new System.Drawing.Size(703, 240);
             this.groupBoxVer.TabIndex = 1;
             this.groupBoxVer.TabStop = false;
             this.groupBoxVer.Text = "제품 정보";
@@ -1140,7 +1140,7 @@
             this.tabInit.Controls.Add(this.groupBoxInit);
             this.tabInit.Location = new System.Drawing.Point(4, 22);
             this.tabInit.Name = "tabInit";
-            this.tabInit.Size = new System.Drawing.Size(733, 266);
+            this.tabInit.Size = new System.Drawing.Size(723, 297);
             this.tabInit.TabIndex = 10;
             this.tabInit.Text = "초기화";
             this.tabInit.UseVisualStyleBackColor = true;
@@ -1150,9 +1150,9 @@
             this.groupBoxInit2.Controls.Add(this.textBox5);
             this.groupBoxInit2.Controls.Add(this.button11);
             this.groupBoxInit2.Enabled = false;
-            this.groupBoxInit2.Location = new System.Drawing.Point(372, 11);
+            this.groupBoxInit2.Location = new System.Drawing.Point(373, 27);
             this.groupBoxInit2.Name = "groupBoxInit2";
-            this.groupBoxInit2.Size = new System.Drawing.Size(350, 240);
+            this.groupBoxInit2.Size = new System.Drawing.Size(330, 240);
             this.groupBoxInit2.TabIndex = 1;
             this.groupBoxInit2.TabStop = false;
             this.groupBoxInit2.Text = "활성화 하려면 설정 모드로 변경";
@@ -1184,7 +1184,7 @@
             this.groupBoxInit.Controls.Add(this.textBox10);
             this.groupBoxInit.Controls.Add(this.button23);
             this.groupBoxInit.Enabled = false;
-            this.groupBoxInit.Location = new System.Drawing.Point(11, 11);
+            this.groupBoxInit.Location = new System.Drawing.Point(16, 27);
             this.groupBoxInit.Name = "groupBoxInit";
             this.groupBoxInit.Size = new System.Drawing.Size(350, 240);
             this.groupBoxInit.TabIndex = 0;
@@ -1220,7 +1220,7 @@
             this.tabGoCal.Location = new System.Drawing.Point(4, 22);
             this.tabGoCal.Name = "tabGoCal";
             this.tabGoCal.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGoCal.Size = new System.Drawing.Size(733, 266);
+            this.tabGoCal.Size = new System.Drawing.Size(723, 297);
             this.tabGoCal.TabIndex = 3;
             this.tabGoCal.Text = "교정";
             this.tabGoCal.UseVisualStyleBackColor = true;
@@ -1228,7 +1228,7 @@
             // button17
             // 
             this.button17.Enabled = false;
-            this.button17.Location = new System.Drawing.Point(644, 88);
+            this.button17.Location = new System.Drawing.Point(639, 109);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(75, 75);
             this.button17.TabIndex = 39;
@@ -1258,7 +1258,7 @@
             this.groupBoxCal.Controls.Add(this.label22);
             this.groupBoxCal.Controls.Add(this.button16);
             this.groupBoxCal.Enabled = false;
-            this.groupBoxCal.Location = new System.Drawing.Point(11, 11);
+            this.groupBoxCal.Location = new System.Drawing.Point(6, 24);
             this.groupBoxCal.Name = "groupBoxCal";
             this.groupBoxCal.Size = new System.Drawing.Size(610, 240);
             this.groupBoxCal.TabIndex = 38;
@@ -1489,7 +1489,7 @@
             this.tabComp.Controls.Add(this.groupBoxComp);
             this.tabComp.Location = new System.Drawing.Point(4, 22);
             this.tabComp.Name = "tabComp";
-            this.tabComp.Size = new System.Drawing.Size(733, 266);
+            this.tabComp.Size = new System.Drawing.Size(723, 297);
             this.tabComp.TabIndex = 9;
             this.tabComp.Text = "외부출력";
             this.tabComp.UseVisualStyleBackColor = true;
@@ -1497,7 +1497,7 @@
             // button22
             // 
             this.button22.Enabled = false;
-            this.button22.Location = new System.Drawing.Point(644, 141);
+            this.button22.Location = new System.Drawing.Point(639, 161);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(75, 75);
             this.button22.TabIndex = 28;
@@ -1508,7 +1508,7 @@
             // button10
             // 
             this.button10.Enabled = false;
-            this.button10.Location = new System.Drawing.Point(644, 60);
+            this.button10.Location = new System.Drawing.Point(639, 60);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(75, 75);
             this.button10.TabIndex = 27;
@@ -1529,7 +1529,7 @@
             this.groupBoxComp.Controls.Add(this.cmdCompZero);
             this.groupBoxComp.Controls.Add(this.cmdCmpMode);
             this.groupBoxComp.Enabled = false;
-            this.groupBoxComp.Location = new System.Drawing.Point(11, 11);
+            this.groupBoxComp.Location = new System.Drawing.Point(12, 24);
             this.groupBoxComp.Name = "groupBoxComp";
             this.groupBoxComp.Size = new System.Drawing.Size(610, 240);
             this.groupBoxComp.TabIndex = 25;
@@ -1643,7 +1643,7 @@
             this.tabSetBasic.Location = new System.Drawing.Point(4, 22);
             this.tabSetBasic.Name = "tabSetBasic";
             this.tabSetBasic.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSetBasic.Size = new System.Drawing.Size(733, 266);
+            this.tabSetBasic.Size = new System.Drawing.Size(723, 297);
             this.tabSetBasic.TabIndex = 5;
             this.tabSetBasic.Text = "기본설정";
             this.tabSetBasic.UseVisualStyleBackColor = true;
@@ -1665,7 +1665,7 @@
             this.groupBoxBasic2.Controls.Add(this.cmdPOZ);
             this.groupBoxBasic2.Controls.Add(this.label35);
             this.groupBoxBasic2.Enabled = false;
-            this.groupBoxBasic2.Location = new System.Drawing.Point(317, 11);
+            this.groupBoxBasic2.Location = new System.Drawing.Point(317, 24);
             this.groupBoxBasic2.Name = "groupBoxBasic2";
             this.groupBoxBasic2.Size = new System.Drawing.Size(300, 240);
             this.groupBoxBasic2.TabIndex = 54;
@@ -1833,7 +1833,7 @@
             // button21
             // 
             this.button21.Enabled = false;
-            this.button21.Location = new System.Drawing.Point(644, 141);
+            this.button21.Location = new System.Drawing.Point(639, 161);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(75, 75);
             this.button21.TabIndex = 53;
@@ -1844,7 +1844,7 @@
             // btnLoad1
             // 
             this.btnLoad1.Enabled = false;
-            this.btnLoad1.Location = new System.Drawing.Point(644, 60);
+            this.btnLoad1.Location = new System.Drawing.Point(639, 60);
             this.btnLoad1.Name = "btnLoad1";
             this.btnLoad1.Size = new System.Drawing.Size(75, 75);
             this.btnLoad1.TabIndex = 52;
@@ -1862,7 +1862,7 @@
             this.groupBoxBasic.Controls.Add(this.cmbHoldmode);
             this.groupBoxBasic.Controls.Add(this.label39);
             this.groupBoxBasic.Enabled = false;
-            this.groupBoxBasic.Location = new System.Drawing.Point(11, 11);
+            this.groupBoxBasic.Location = new System.Drawing.Point(11, 24);
             this.groupBoxBasic.Name = "groupBoxBasic";
             this.groupBoxBasic.Size = new System.Drawing.Size(300, 240);
             this.groupBoxBasic.TabIndex = 51;
@@ -1979,7 +1979,7 @@
             this.tabSetRS.Location = new System.Drawing.Point(4, 22);
             this.tabSetRS.Name = "tabSetRS";
             this.tabSetRS.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSetRS.Size = new System.Drawing.Size(733, 266);
+            this.tabSetRS.Size = new System.Drawing.Size(723, 297);
             this.tabSetRS.TabIndex = 0;
             this.tabSetRS.Text = "통신설정";
             this.tabSetRS.UseVisualStyleBackColor = true;
@@ -1987,7 +1987,7 @@
             // button20
             // 
             this.button20.Enabled = false;
-            this.button20.Location = new System.Drawing.Point(644, 141);
+            this.button20.Location = new System.Drawing.Point(639, 161);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(75, 75);
             this.button20.TabIndex = 15;
@@ -2008,7 +2008,7 @@
             this.groupBoxRS.Controls.Add(this.label28);
             this.groupBoxRS.Controls.Add(this.cmdDatabits);
             this.groupBoxRS.Enabled = false;
-            this.groupBoxRS.Location = new System.Drawing.Point(11, 11);
+            this.groupBoxRS.Location = new System.Drawing.Point(15, 24);
             this.groupBoxRS.Name = "groupBoxRS";
             this.groupBoxRS.Size = new System.Drawing.Size(610, 240);
             this.groupBoxRS.TabIndex = 42;
@@ -2122,7 +2122,7 @@
             // button7
             // 
             this.button7.Enabled = false;
-            this.button7.Location = new System.Drawing.Point(644, 60);
+            this.button7.Location = new System.Drawing.Point(639, 60);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 75);
             this.button7.TabIndex = 14;
@@ -2135,7 +2135,7 @@
             this.tabSetPC.Controls.Add(this.groupBoxPC);
             this.tabSetPC.Location = new System.Drawing.Point(4, 22);
             this.tabSetPC.Name = "tabSetPC";
-            this.tabSetPC.Size = new System.Drawing.Size(733, 266);
+            this.tabSetPC.Size = new System.Drawing.Size(723, 297);
             this.tabSetPC.TabIndex = 8;
             this.tabSetPC.Text = "PC설정";
             this.tabSetPC.UseVisualStyleBackColor = true;
@@ -2154,9 +2154,9 @@
             this.groupBoxPC.Controls.Add(this.cmbStopbits);
             this.groupBoxPC.Controls.Add(this.cmbBaudrate);
             this.groupBoxPC.Controls.Add(this.label11);
-            this.groupBoxPC.Location = new System.Drawing.Point(11, 11);
+            this.groupBoxPC.Location = new System.Drawing.Point(13, 24);
             this.groupBoxPC.Name = "groupBoxPC";
-            this.groupBoxPC.Size = new System.Drawing.Size(710, 240);
+            this.groupBoxPC.Size = new System.Drawing.Size(701, 240);
             this.groupBoxPC.TabIndex = 39;
             this.groupBoxPC.TabStop = false;
             this.groupBoxPC.Text = "PC측 통신 설정 후 ON";
@@ -2246,8 +2246,8 @@
             // cmbPort
             // 
             this.cmbPort.FormattingEnabled = true;
+            this.cmbPort.ItemHeight = 12;
             this.cmbPort.Location = new System.Drawing.Point(201, 43);
-            this.cmbPort.MaxDropDownItems = 20;
             this.cmbPort.Name = "cmbPort";
             this.cmbPort.Size = new System.Drawing.Size(84, 20);
             this.cmbPort.Sorted = true;
@@ -2268,7 +2268,9 @@
             // 
             // cmbBaudrate
             // 
+            this.cmbBaudrate.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cmbBaudrate.FormattingEnabled = true;
+            this.cmbBaudrate.ItemHeight = 12;
             this.cmbBaudrate.Items.AddRange(new object[] {
             "2400",
             "4800",
@@ -2299,10 +2301,10 @@
             this.tabControl1.Controls.Add(this.tabGoCal);
             this.tabControl1.Controls.Add(this.tabInit);
             this.tabControl1.Controls.Add(this.tabVer);
-            this.tabControl1.Location = new System.Drawing.Point(0, 370);
+            this.tabControl1.Location = new System.Drawing.Point(5, 7);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(741, 292);
+            this.tabControl1.Size = new System.Drawing.Size(731, 323);
             this.tabControl1.TabIndex = 13;
             // 
             // timerInit
@@ -2314,18 +2316,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(741, 662);
+            this.ClientSize = new System.Drawing.Size(757, 661);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(757, 700);
             this.MinimumSize = new System.Drawing.Size(757, 400);
             this.Name = "Form1";
             this.Text = "AD-310PC";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panel1.ResumeLayout(false);

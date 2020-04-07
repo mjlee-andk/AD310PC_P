@@ -94,13 +94,6 @@ namespace AD310AD
             cmbParity.Text = mySetting.Default.ParityDefault;
             cmbStopbits.Text = mySetting.Default.StopDefault;
             cmbTerminator.Text = mySetting.Default.TerminatorDefault;
-
-            // 폰트 설정
-            PrivateFontCollection privateFonts = new PrivateFontCollection();
-            privateFonts.AddFontFile("SEA_____.TTF");
-
-            Font font = new Font(privateFonts.Families[0], 24f);
-            textBox1.Font = font;
         }
 
         // 시리얼 수신 이벤트
@@ -586,17 +579,37 @@ namespace AD310AD
         // 설정 창 표시, 숨김
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
+            //if (checkBox1.Checked)
+            //{
+            //    checkBox1.Text = "설정 감추기";
+            //    tabControl1.Visible = true;
+            //    base.Size = new Size(757, 700);
+            //}
+            //else
+            //{
+            //    checkBox1.Text = "설정 보이기";
+            //    tabControl1.Visible = false;
+            //    base.Size = new Size(757, 400);
+            //}
+            //AD310AD.Form2 f2 = new AD310AD.Form2();
+            //f2.TopLevel = false;
+            //f2.Dock = System.Windows.Forms.DockStyle.Fill;
+            //f2.FormBorderStyle = FormBorderStyle.None;
             if (checkBox1.Checked)
             {
                 checkBox1.Text = "설정 감추기";
+                panel1.SendToBack();
+                tabControl1.BringToFront();
                 tabControl1.Visible = true;
-                base.Size = new Size(757, 700);
+
+
             }
             else
             {
                 checkBox1.Text = "설정 보이기";
+                tabControl1.SendToBack();
+                panel1.BringToFront();
                 tabControl1.Visible = false;
-                base.Size = new Size(757, 400);
             }
         }
 
@@ -1016,23 +1029,24 @@ namespace AD310AD
                                 // baudrate 표시
                                 try
                                 {
-                                    if (Convert.ToInt32(fDataArray[7].Substring(5)) == 24)
+                                    int fDataInt = Convert.ToInt32(fDataArray[7].Substring(5));
+                                    if (fDataInt == 24)
                                     {
                                         cmdBaudrate.Text = cmdBaudrate.Items[0].ToString();
                                     }
-                                    else if (Convert.ToInt32(fDataArray[7].Substring(5)) == 48)
+                                    else if (fDataInt == 48)
                                     {
                                         cmdBaudrate.Text = cmdBaudrate.Items[1].ToString();
                                     }
-                                    else if (Convert.ToInt32(fDataArray[7].Substring(5)) == 96)
+                                    else if (fDataInt == 96)
                                     {
                                         cmdBaudrate.Text = cmdBaudrate.Items[2].ToString();
                                     }
-                                    else if (Convert.ToInt32(fDataArray[7].Substring(5)) == 192)
+                                    else if (fDataInt == 192)
                                     {
                                         cmdBaudrate.Text = cmdBaudrate.Items[3].ToString();
                                     }
-                                    else if (Convert.ToInt32(fDataArray[7].Substring(5)) == 384)
+                                    else if (fDataInt == 384)
                                     {
                                         cmdBaudrate.Text = cmdBaudrate.Items[4].ToString();
                                     }
